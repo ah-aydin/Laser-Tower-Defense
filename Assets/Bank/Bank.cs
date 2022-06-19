@@ -11,11 +11,13 @@ public class Bank : MonoBehaviour
     private int currentBalance;
     public int CurrentBalance { get { return currentBalance; } }
 
-    [SerializeField] TextMeshProUGUI displayBalance;
+    TextMeshProUGUI displayBalance;
 
     private void Awake()
     {
         currentBalance = startingBalance;
+
+        displayBalance = FindObjectOfType<UI_DisplayBalanceText>().gameObject.GetComponent<TextMeshProUGUI>();
         UpdateDisaplay();
     }
 

@@ -5,6 +5,7 @@ using TMPro;
 
 // Executes in play and edit mode
 [ExecuteAlways]
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinateLable : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
@@ -34,7 +35,7 @@ public class CoordinateLable : MonoBehaviour
         }
 
         // Debuging
-        ColorCoordinates();
+        SetLabelColor();
         ToggleLabels();
     }
 
@@ -44,7 +45,7 @@ public class CoordinateLable : MonoBehaviour
         UpdateObjectName();
     }
 
-    private void ColorCoordinates()
+    private void SetLabelColor()
     {
         if (waypoint.IsBuildable)
         {

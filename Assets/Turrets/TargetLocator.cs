@@ -5,34 +5,21 @@ using UnityEngine;
 public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform rotator;
+
     [SerializeField] float range = 20f;
+    public float Range { get { return range; }}
 
     private ObjectPool enemyPool;                       // Reference to the enemy pool
 
-    private Transform target;                           // Reference to the target
-    private ParticleSystem[] weapionParticleSystems;    // Reference to the weapon particle systems
-    private bool b_isFiring = false;
-
-    private Animator animator;
-    private string ANIM_IS_FIRING = "IsFiring";
+    private Transform target = null;                    // Reference to the target
+    public Transform Target { get { return target; }}
 
     private void Awake()
     {
         enemyPool = FindObjectOfType<ObjectPool>();
-
-        animator = GetComponent<Animator>();
-        weapionParticleSystems = GetComponentsInChildren<ParticleSystem>();
-
-        // Disable weapons by default
-        HandleWeapons(false);
     }
 
     private void Update()
-    {
-        Attack();
-    }
-
-    private void Attack()
     {
         // If there is a target and it is active
         if (target && target.gameObject.activeInHierarchy)
@@ -41,13 +28,15 @@ public class TargetLocator : MonoBehaviour
             if (Vector3.Distance(transform.position, target.position) < range)
             {
                 AimWeapon();
-                Fire(true);
                 return;
+            }
+            else
+            {
+                target = null;
             }
         }
 
-        // If there is no target within range, stop firing and find new target
-        Fire(false);
+        // If there is no target within range, find new target
         FindTarget();
     }
 
@@ -56,11 +45,23 @@ public class TargetLocator : MonoBehaviour
         GameObject closestEnemy = null;
         float maxDistance = Mathf.Infinity;
 
+        GameObject[] enemies = enemyPool.GetActiveEnemies();
+        if (enemies.Length <= 0) 
+        {
+            target = null;
+            return;
+        }
+
         // Get list of active enemies
-        foreach (GameObject enemy in enemyPool.GetActiveEnemies())
+        foreach (GameObject enemy in enemies)
         {
             // Check the distances and choose the closest one
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            
+            // Ignore if it is out of range
+            if (distance > range) continue;
+
+            // Replace the closes enemy if it is closer than the stored one
             if (distance < maxDistance)
             {
                 maxDistance = distance;
@@ -68,37 +69,12 @@ public class TargetLocator : MonoBehaviour
             }
         }
 
-        // Return its transform
-        target = closestEnemy.transform;
+        // Set as new target if found
+        if (closestEnemy) target = closestEnemy.transform;
     }
 
     private void AimWeapon()
     {
         rotator.LookAt(target.transform);
-    }
-
-    private void Fire(bool b_shouldFire)
-    {
-        // If the state did not change, do not apply anything
-        if ((b_isFiring && b_shouldFire) || (!b_isFiring && !b_shouldFire)) return;
-
-        b_isFiring = b_shouldFire;
-        HandleWeapons(b_shouldFire);
-        HandleFiringAnimations(b_shouldFire);
-    }
-
-    // Activates and deactivates the particle system given isActive
-    private void HandleWeapons(bool isActive)
-    {
-        for (int i = 0; i < weapionParticleSystems.Length; ++i)
-        {
-            var emmisionModule = weapionParticleSystems[i].emission;
-            emmisionModule.enabled = isActive;
-        }
-    }
-
-    private void HandleFiringAnimations(bool isFiring)
-    {
-        animator.SetBool(ANIM_IS_FIRING, isFiring);
     }
 }

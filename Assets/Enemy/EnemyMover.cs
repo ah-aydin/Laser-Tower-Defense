@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] [Range(0, 5)] float moveSpeed = 0.5f;
@@ -19,16 +20,18 @@ public class EnemyMover : MonoBehaviour
     {
         FindPath();
         ReturnToStart();
-        StartCoroutine(FollowPath());
+        StartCoroutine(FollowRoad());
     }
 
     void FindPath()
     {
         path.Clear();
 
-        GameObject[] roadTiles = GameObject.FindGameObjectsWithTag("Road");
-        foreach (GameObject tile in roadTiles)
+        GameObject road = GameObject.FindGameObjectWithTag("Road");
+        foreach (Transform tile in road.transform)
         {
+            Waypoint waypoint = tile.GetComponent<Waypoint>();
+            if (!waypoint) continue;
             path.Add(tile.GetComponent<Waypoint>());
         }
     }
@@ -39,7 +42,14 @@ public class EnemyMover : MonoBehaviour
         transform.position = path[0].transform.position;
     }
 
-    IEnumerator FollowPath()
+    private void FinishRoad()
+    {
+        // TODO add more "specticle"
+        gameObject.SetActive(false);
+        enemy.BankPenalty();
+    }
+
+    IEnumerator FollowRoad()
     {
         // Follow waypoint
         foreach(Waypoint waypoint in path)
@@ -58,8 +68,6 @@ public class EnemyMover : MonoBehaviour
             }
         }
 
-        // TODO add more "specticle"
-        gameObject.SetActive(false);
-        enemy.BankPenalty();
+        FinishRoad();
     }
 }
