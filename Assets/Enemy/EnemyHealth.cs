@@ -7,7 +7,14 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] int startingHealth = 100;
     private int currentHealth = 0;
 
+    private Enemy enemy;
+
     private void Start()
+    {
+        enemy = GetComponent<Enemy>();
+    }
+
+    private void OnEnable()
     {
         currentHealth = startingHealth;
     }
@@ -22,7 +29,9 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= 1;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            // TODO add more specticle
+            gameObject.SetActive(false);
+            enemy.BankReward();
         }
     }
 }

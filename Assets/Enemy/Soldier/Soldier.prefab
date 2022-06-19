@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2443642973971578288}
   - component: {fileID: 3195510935840270778}
   - component: {fileID: -2575381781744513929}
+  - component: {fileID: -474375652723610538}
   m_Layer: 0
   m_Name: Soldier
   m_TagString: Untagged
@@ -80,15 +81,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41a8320715d473488d75af98c3bb214, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   moveSpeed: 1.35
 --- !u!114 &-2575381781744513929
 MonoBehaviour:
@@ -100,6 +92,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fec51ddf2e9991241a3b1f1120703f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 100
+--- !u!114 &-474375652723610538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3195510935840270776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ff3edda50717c845845dbc5797b73c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5054463459047426272
