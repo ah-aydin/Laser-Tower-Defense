@@ -65,7 +65,6 @@ public class Projectile : MonoBehaviour
 
             // Deal damage
             enemyHealth.ProcessHit(damage);
-            Debug.Log($"Dealt spash damage to {collider.name}");
         }
     }
 

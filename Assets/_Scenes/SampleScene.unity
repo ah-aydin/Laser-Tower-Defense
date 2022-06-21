@@ -1000,6 +1000,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7322662346919098746, guid: 744a82b0badb99d4daecbfb28d57b6a4, type: 3}
   m_PrefabInstance: {fileID: 905398852}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &936588140
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7438382320066437192, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_Name
+      value: TurretSelector
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 42e644117d709834cad94fb109303911, type: 3}
 --- !u!1001 &939903292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2061,6 +2118,17 @@ Transform:
   m_Father: {fileID: 137007763}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1973715228 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7438382320066437195, guid: 42e644117d709834cad94fb109303911, type: 3}
+  m_PrefabInstance: {fileID: 936588140}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6200365fa8570ba4fa68737333eae6a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2874762800281598072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2068,6 +2136,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1899050555, guid: 77fb10a8d6d34234584b66b439ea4676, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1973715228}
+    - target: {fileID: 2096693037, guid: 77fb10a8d6d34234584b66b439ea4676, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1973715228}
     - target: {fileID: 2874762801533987528, guid: 77fb10a8d6d34234584b66b439ea4676, type: 3}
       propertyPath: m_Pivot.x
       value: 0
