@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3151584571240515833}
   - component: {fileID: 3159912750764536563}
   - component: {fileID: 3168744887604100759}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 3151770903226444611}
   - component: {fileID: 3160267199116852315}
   - component: {fileID: 3169454318462928821}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,7 @@ GameObject:
   - component: {fileID: 3144339136217955601}
   - component: {fileID: 3160301754159186773}
   - component: {fileID: 3170271255352294641}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3144491652789171959}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Rotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 4802013857353340138}
   - component: {fileID: -1666876673190827868}
   - component: {fileID: 4459887130080152990}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Gateling Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - component: {fileID: 3144335171246137537}
   - component: {fileID: 3159928606620818065}
   - component: {fileID: 3170512391210376605}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3151538325530142139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 3151855780286047443}
   - component: {fileID: 3159482708158350001}
   - component: {fileID: 3168596920477694481}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +580,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3151669122106990007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3151818386691686515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -643,7 +643,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3144498307780011857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1908992346118192141}
   - component: {fileID: 6731318547944357042}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 8757332756285841164}
   - component: {fileID: 8680956574049279602}
   - component: {fileID: 1234801236767244089}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Muzzle Flash Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5572,7 +5572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5726556512345504659}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5603,7 +5603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 10417173039420906}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bullet Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5634,7 +5634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2746625612505267543}
   - component: {fileID: 6631302524366048560}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LIne Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -5,11 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] int startingHealth = 100;
+    [SerializeField] float startingHealth = 100;
     [Tooltip("Adds to max hitpoints when enemy dies")]
-    [SerializeField] int difficultyRamp = 1;
+    [SerializeField] float difficultyRamp = 1;
 
-    private int currentHealth = 0;
+    private float currentHealth = 0;
 
     private Enemy enemy;
 
@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = startingHealth;
     }
 
-    public void ProcessHit(int ammount)
+    public void ProcessHit(float ammount)
     {
         currentHealth -= Mathf.Abs(ammount);
         if (currentHealth <= 0)

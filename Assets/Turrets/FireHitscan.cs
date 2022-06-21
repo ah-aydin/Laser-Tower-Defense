@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(TargetLocator))]
+[RequireComponent(typeof(Animator))]
 public class FireHitscan : MonoBehaviour
 {
     [Header("Damage stats")]
     [Tooltip("Fire rate in rounds per second")]
     [SerializeField] [Range(0.00001f, 50f)] float RoundsPerSecond = 10f;
-    [SerializeField] int damagePerShot = 1;
+    [SerializeField] float damagePerShot = 1;
 
     [Header("Turret components")]
     [SerializeField] Transform bulletSpawn;
