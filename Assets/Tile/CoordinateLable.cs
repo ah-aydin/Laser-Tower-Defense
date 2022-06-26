@@ -9,20 +9,23 @@ using TMPro;
 public class CoordinateLable : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
-    [SerializeField] Color blockedColor = Color.gray;
+    [SerializeField] Color walkableColor = Color.gray;
+    [SerializeField] Color exploredColor = Color.yellow;
+    [SerializeField] Color pathColor = new Color(1f, 0.5f, 0f);
     [SerializeField] string tileType = "Standard";
 
     private TextMeshPro label;
-    private Waypoint waypoint;
-    private Vector2Int coordinates = new Vector2Int();
+    private Vector2Int coordinates = new Vector2Int(0, 0);
+    GridManager gridManager;
 
     private void Awake()
     {
         // Switch label off by default
         label = GetComponent<TextMeshPro>();
-        label.enabled = false;
+        //label.enabled = false;
 
-        waypoint = GetComponentInParent<Waypoint>();
+        gridManager = FindObjectOfType<GridManager>();
+
         DisplayCoordinates();
     }
 
@@ -47,13 +50,27 @@ public class CoordinateLable : MonoBehaviour
 
     private void SetLabelColor()
     {
-        if (waypoint.IsBuildable)
+        if (gridManager == null) return;
+
+        Node node = gridManager.GetNode(coordinates);
+       
+        if (node == null) return;
+        
+        if (node.isPath)
         {
-            label.color = defaultColor;
+            label.color = pathColor;
+        }
+        else if (node.isExplored)
+        {
+            label.color = exploredColor;
+        }
+        else if (node.isWalkable)
+        {
+            label.color = walkableColor;
         }
         else
         {
-            label.color = blockedColor;
+            label.color = defaultColor;
         }
     }
 

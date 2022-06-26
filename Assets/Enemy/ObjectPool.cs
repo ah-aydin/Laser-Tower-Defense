@@ -8,16 +8,15 @@ public class ObjectPool : MonoBehaviour
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] [Range(0, 50)] int poolSize = 5;
     [SerializeField] [Range(0.1f, 30f)] float spawnTimer = 1f;
+    
+    private Transform startPosition;
 
     protected GameObject[] pool;
 
-    private void Awake()
-    {
-        PopulatePool();
-    }
-
     private void Start()
     {
+        startPosition = FindObjectOfType<EnemySpawnLocation>().transform;
+        PopulatePool();
         StartCoroutine(SpawnEnemy());
     }
 
@@ -29,6 +28,7 @@ public class ObjectPool : MonoBehaviour
         {
             pool[i] = Instantiate(enemyPrefab, transform);
             pool[i].SetActive(false);
+            pool[i].transform.position = startPosition.position;
         }
     }
 
