@@ -26,7 +26,9 @@ public class ObjectPool : MonoBehaviour
 
         for (int i = 0; i < pool.Length; ++i)
         {
-            pool[i] = Instantiate(enemyPrefab, transform);
+            GameObject go = Instantiate(enemyPrefab, transform);
+            if (go == null) Debug.Log("I dont have enemy");
+            pool[i] = go;
             pool[i].SetActive(false);
             pool[i].transform.position = startPosition.position;
         }

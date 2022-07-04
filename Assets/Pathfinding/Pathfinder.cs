@@ -5,7 +5,9 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour
 {
     [SerializeField] Vector2Int startCoordinates;
+    public Vector2Int StartCoordinates { get { return startCoordinates; }}
     [SerializeField] Vector2Int destinationCoordinates;
+    public Vector2Int DestinationsCoordinates { get { return destinationCoordinates; }}
 
     Node startNode;
     Node destinationNode;
@@ -24,16 +26,26 @@ public class Pathfinder : MonoBehaviour
         if (gridManager != null)
         {
             grid = gridManager.Grid;
+            startNode = grid[startCoordinates];
+            destinationNode = grid[destinationCoordinates];
         }
     }
 
     private void Start()
     {
-        startNode = gridManager.Grid[startCoordinates];
-        destinationNode = gridManager.Grid[destinationCoordinates];
+        GetNewPath();
+    }
 
-        BreadthFirstSearch();
-        BuildPath();
+    public List<Node> GetNewPath()
+    {
+        return GetNewPath(startCoordinates);
+    }
+
+    public List<Node> GetNewPath(Vector2Int coordinates)
+    {
+        gridManager.ResetNodes();
+        bool reachedEnd = BreadthFirstSearch(coordinates);
+        return BuildPath(reachedEnd);
     }
 
     private void ExploreNeighbors()
@@ -45,6 +57,7 @@ public class Pathfinder : MonoBehaviour
             Vector2Int neighborCoords = currentSearchNode.coordinates + direction;
             if (grid.ContainsKey(neighborCoords))
             {
+                if (!grid[neighborCoords].isWalkable) continue;
                 neighbors.Add(grid[neighborCoords]);
             }
         }
@@ -61,12 +74,18 @@ public class Pathfinder : MonoBehaviour
         }
     }
 
-    private void BreadthFirstSearch()
+    private bool BreadthFirstSearch(Vector2Int coordinates)
     {
+        startNode.isWalkable = true;
+        destinationNode.isWalkable = true;
+
+        frontier.Clear();
+        reached.Clear();
+
         bool isRunning = true;
 
-        frontier.Enqueue(startNode);
-        reached.Add(startCoordinates, startNode);
+        frontier.Enqueue(grid[coordinates]);
+        reached.Add(coordinates, grid[coordinates]);
 
         while (frontier.Count > 0 && isRunning)
         {
@@ -76,13 +95,17 @@ public class Pathfinder : MonoBehaviour
             if (currentSearchNode.coordinates == destinationCoordinates)
             {
                 isRunning = false;
+                return true;
             }
         }
+        return false;
     }
 
     // Backtraces the shortes path from the destination node to the start node
-    private List<Node> BuildPath()
+    private List<Node> BuildPath(bool reachedEnd)
     {
+        if (!reachedEnd) return new List<Node>();
+
         List<Node> path = new List<Node>();
         Node currentNode = destinationNode;
         
@@ -99,5 +122,30 @@ public class Pathfinder : MonoBehaviour
         path.Reverse();
 
         return path;
+    }
+
+    public bool WillBlockPath(Vector2Int coordinates)
+    {
+        if (!grid.ContainsKey(coordinates)) return false;
+
+        // If it is either the start or the end tile, do not allow
+        if (coordinates == startCoordinates || coordinates == destinationCoordinates) return true;
+
+        bool prevState = grid[coordinates].isWalkable;
+        grid[coordinates].isWalkable = false;
+        List<Node> newPath = GetNewPath();
+        grid[coordinates].isWalkable = prevState;
+        
+        if (newPath.Count == 0)
+        {
+            GetNewPath();
+            return true;
+        }
+        return false;
+    }
+
+    public void NotifyReceivers()
+    {
+        BroadcastMessage("RecalculatePath", false, SendMessageOptions.DontRequireReceiver);
     }
 }
