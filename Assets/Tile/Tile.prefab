@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 313945836969805938}
   - component: {fileID: 9208840593140743995}
   - component: {fileID: 2857625463372100011}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  walkableColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   exploredColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   pathColor: {r: 1, g: 0.5, b: 0, a: 1}
   tileType: Standard
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 6071719277949273699}
   - component: {fileID: 2961136806130744405}
   - component: {fileID: 8801330373109350572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 7322662346919098746}
   - component: {fileID: 6089036417376282516}
   - component: {fileID: 4178264231994398998}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

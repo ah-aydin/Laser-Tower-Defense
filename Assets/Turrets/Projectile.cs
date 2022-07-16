@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] [Range(0.1f, 100)] private float travelSpeed = 10f;
+    [SerializeField] [Range(0.1f, 100000)] private float travelSpeed = 10f;
     [Tooltip("How much time the projectile will travel before getting despawned")]
-    [SerializeField] [Range(1f, 10f)] private float timeToLive = 2f;
+    [SerializeField] [Range(0.1f, 10f)] private float timeToLive = 2f;
+    [SerializeField] private GameObject explosionParticle;
 
     [Tooltip("Put the enemy layer mask here")]
     [SerializeField] LayerMask enemyMask;
@@ -40,7 +41,12 @@ public class Projectile : MonoBehaviour
                 enemyHeatlh.ProcessHit(directHitDamage);
             }
         }
+        if (explosionParticle)
+        {
+            Instantiate(explosionParticle, transform.position, Quaternion.identity);
+        }
         DealSplashDamage();
+        Destroy(gameObject);
     }
 
     private void DealSplashDamage()

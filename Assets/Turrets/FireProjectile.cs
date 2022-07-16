@@ -27,7 +27,7 @@ public class FireProjectile : MonoBehaviour
 
     private float delayBetweenShots;
     private float timeSinceLastFire;
-    private bool b_isFiring;            // Keep's track of the current state of firing
+    //private bool b_isFiring;            // Keep's track of the current state of firing
 
     private void Start()
     {
@@ -38,7 +38,7 @@ public class FireProjectile : MonoBehaviour
         delayBetweenShots = 1f / RoundsPerSecond;
         timeSinceLastFire = 0;
 
-        b_isFiring = true;
+        //b_isFiring = true;
     }
 
     private void Update()

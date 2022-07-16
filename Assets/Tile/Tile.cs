@@ -27,18 +27,28 @@ public class Tile : MonoBehaviour
         }
     }
 
-    private void OnMouseDown()
+    private void Start()
+    {
+        if (!isBuildable)
+        {
+            gridManager.BlockNode(coordinates);
+        }
+    }
+
+    public bool HandleTurretPlacement(Turret turretPrefab)
     {
         if (isBuildable && gridManager.GetNode(coordinates).isWalkable && !pathfinder.WillBlockPath(coordinates))
         {
-            // Spawn tower and mark as not buildable
-            bool b_isPlaced = turretSelector.SpawnTurret(transform.position);
+            // Spawn turret and mark as not buildable
+            bool b_isPlaced = turretPrefab.CreateTurret(turretPrefab, transform.position);
             isBuildable = !b_isPlaced;
             if (b_isPlaced)
             {
                 gridManager.BlockNode(coordinates);
                 pathfinder.NotifyReceivers();
+                return true;
             }
         }
+        return false;
     }
 }

@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7695990371119079285, guid: 0ef99742895408449ad323febae6c0d1, type: 3}
       propertyPath: startingBalance
-      value: 500
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 7695990371119079286, guid: 0ef99742895408449ad323febae6c0d1, type: 3}
       propertyPath: m_RootOrder
@@ -107,7 +107,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7438382320066437192, guid: 42e644117d709834cad94fb109303911, type: 3}
       propertyPath: m_Name
-      value: TurretSelector
+      value: TurretPlacer
       objectReference: {fileID: 0}
     - target: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
       propertyPath: m_RootOrder

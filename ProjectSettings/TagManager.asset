@@ -16,8 +16,8 @@ TagManager:
   - Enemy
   - Turret
   - Projectile
-  - 
-  - 
+  - PostProcessing
+  - Tile
   - 
   - 
   - 

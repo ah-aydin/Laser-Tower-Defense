@@ -49,6 +49,7 @@ public class FireHitscan : MonoBehaviour
 
         b_isFiring = true;
         HandleEffects(false);
+        RemoveMuzzleEffects();
     }
 
     private void Update()
