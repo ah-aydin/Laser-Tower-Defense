@@ -280,8 +280,9 @@ GameObject:
   - component: {fileID: 1899050557}
   - component: {fileID: 1899050556}
   - component: {fileID: 1899050555}
+  - component: {fileID: 1363203267}
   m_Layer: 5
-  m_Name: Gateling Gun
+  m_Name: Gateling Gun Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,6 +402,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1363203267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899050553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27d160c2a31ada49ae0f1c62f253fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretId: 0
 --- !u!1 &2096693035
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,8 +427,9 @@ GameObject:
   - component: {fileID: 2096693039}
   - component: {fileID: 2096693038}
   - component: {fileID: 2096693037}
+  - component: {fileID: 1158821909}
   m_Layer: 5
-  m_Name: Rocket Launcher
+  m_Name: Rocket Launcher Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -534,6 +549,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1158821909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096693035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b27d160c2a31ada49ae0f1c62f253fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretId: 1
 --- !u!1 &2874762801111814354
 GameObject:
   m_ObjectHideFlags: 0

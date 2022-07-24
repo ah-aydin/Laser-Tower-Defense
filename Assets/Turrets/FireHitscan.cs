@@ -92,7 +92,7 @@ public class FireHitscan : MonoBehaviour
         }
         else
         {
-            HandleMuzzleEffects(targetLocator.Range);
+            RemoveMuzzleEffects();
         }
     }
     

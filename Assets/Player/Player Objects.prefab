@@ -153,10 +153,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7438382320066437195, guid: 42e644117d709834cad94fb109303911, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 42e644117d709834cad94fb109303911, type: 3}
+--- !u!1 &2535694149439985143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7438382320066437192, guid: 42e644117d709834cad94fb109303911, type: 3}
+  m_PrefabInstance: {fileID: 4902987518451070399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2535694149439985141 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7438382320066437194, guid: 42e644117d709834cad94fb109303911, type: 3}
   m_PrefabInstance: {fileID: 4902987518451070399}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1168758478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2535694149439985143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5616fb0748054674e89aa1bd013e9fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turretPlaceholders:
+  - {fileID: 3919172040159573955, guid: 4c7ec56895960ab46a69344847b514db, type: 3}
+  - {fileID: -418941250832106428, guid: 503333c17863b4941a4ce8128a086503, type: 3}
